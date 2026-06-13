@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { profileData } from '@/data/profile-data';
 import { Terminal, Briefcase, BookOpen, Layers, Mail, GitBranch as Github, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState(0);
@@ -208,10 +209,12 @@ export default function Portfolio() {
                     {pub.description}
                   </p>
                 </div>
-                <div className="pt-6 flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-400 cursor-pointer hover:text-emerald-300">
-                  <span>Read Paper</span>
-                  <ArrowUpRight size={14} />
-                </div>
+                {pub.link && (
+                  <Link href={pub.link} className="pt-6 flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-400 cursor-pointer hover:text-emerald-300">
+                    <span>Read Paper</span>
+                    <ArrowUpRight size={14} />
+                  </Link>
+                )}
               </motion.div>
             ))}
           </div>
@@ -222,7 +225,6 @@ export default function Portfolio() {
       <footer className="border-t border-slate-900 mt-24 bg-slate-950/40">
         <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
           <span>&copy; {new Date().getFullYear()} {profileData.name}. All rights reserved.</span>
-          <span>Built with Next.js & Tailwind CSS</span>
         </div>
       </footer>
     </div>

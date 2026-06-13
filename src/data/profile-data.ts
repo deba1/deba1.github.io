@@ -1,4 +1,4 @@
-import { ProfileData } from "@/app/types";
+import { ProfileData } from "@/types";
 
 export const profileData: ProfileData = {
   name: "Debashish Sarker",
@@ -44,17 +44,20 @@ export const profileData: ProfileData = {
   publications: [
     {
       title: "Analysis of Centralized Payment Eco-System: A Systematic Review on E-Payments",
-      description: "A comprehensive structural evaluation detailing throughput, bottlenecks, and systematic frameworks of centralized monetary platforms."
+      description: "A comprehensive structural evaluation detailing throughput, bottlenecks, and systematic frameworks of centralized monetary platforms.",
+      link: "https://www.researchgate.net/profile/Mdal-Amin/publication/344223983_Analysis_of_Centralized_Payment_Eco-System_A_Systematic_Review_on_E-Payments/links/5f5d97a092851c078963178c/Analysis-of-Centralized-Payment-Eco-System-A-Systematic-Review-on-E-Payments.pdf"
     },
     {
       title: "Decentralized Payment Aggregator: Hyperledger Fabric",
-      description: "Research exploring permissioned enterprise blockchain ledger systems configured as multi-tenant transaction aggregators."
+      description: "Research exploring permissioned enterprise blockchain ledger systems configured as multi-tenant transaction aggregators.",
+      link: "https://dl.acm.org/doi/pdf/10.1145/3542954.3543006"
     },
     {
       title: "A Comprehensive Review and Analysis on Decentralized Payment Gateways",
-      description: "In-depth dynamic architectural assessment mapping security protocols against transaction friction in public and private chains."
+      description: "In-depth dynamic architectural assessment mapping security protocols against transaction friction in public and private chains.",
+      link: "https://www.researchgate.net/profile/Mdal-Amin/publication/365108137_Decentralized_Payment_Aggregator_Hyperledger_Fabric/links/6520539e3ab6cb4ec6c0aada/Decentralized-Payment-Aggregator-Hyperledger-Fabric.pdf"
     }
   ],
   github: "https://github.com/deba1",
-  email: "dsarker333@gmail.com"
+  email: "dsarker515@gmail.com"
 };
