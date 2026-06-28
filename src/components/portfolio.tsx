@@ -10,6 +10,7 @@ import { Header } from "./header";
 import { Hero } from "./hero";
 import { Skills } from "./skills";
 import { Experience } from "./experience";
+import { Credentials } from "./credentials";
 
 export default function Portfolio() {
   const { theme } = useTheme();
@@ -25,6 +26,8 @@ export default function Portfolio() {
           <Skills />
 
           <Experience />
+
+          <Credentials />
 
           <section id="publications" className="space-y-8 scroll-mt-20">
             <div className="flex items-center gap-3 border-b border-border pb-4">
