@@ -2,39 +2,27 @@ import { profileData } from "@/data/profile-data";
 import { motion, AnimatePresence } from "framer-motion";
 import { LayersIcon, TerminalIcon } from "lucide-react";
 import { useMemo, useState } from "react";
+import type { SkillType } from "@/types";
 
-type SkillFilter = "All" | "Backend" | "Frontend";
+type SkillFilter = SkillType | "All";
 
 const SKILL_TYPES = [
   "All",
-  "Backend",
   "Frontend",
+  "Backend",
+  "DB",
+  "CMS",
+  "DevOps",
+  "Blockchain",
 ] as const satisfies SkillFilter[];
-
-const backendSkills = [
-  "ASP.NET Core",
-  "NestJS",
-  "NodeJS",
-  "MSSQL",
-  "MySQL",
-  "Postgres",
-  "MongoDB",
-];
-
-const frontendSkills = ["TypeScript", "NextJS", "ReactJS", "Angular"];
 
 export function Skills() {
   const [skillFilter, setSkillFilter] = useState<SkillFilter>("All");
 
-  const filteredSkills = useMemo(
-    () =>
-      profileData.skills.filter((skill) => {
-        if (skillFilter === "Backend") return backendSkills.includes(skill);
-        if (skillFilter === "Frontend") return frontendSkills.includes(skill);
-        return true;
-      }),
-    [skillFilter],
-  );
+  const filteredSkills = useMemo(() => {
+    if (skillFilter === "All") return profileData.skills;
+    return profileData.skills.filter((skill) => skill.type === skillFilter);
+  }, [skillFilter]);
 
   return (
     <section id="skills" className="space-y-8 scroll-mt-20">
@@ -72,7 +60,7 @@ export function Skills() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              key={skill}
+              key={skill.name}
               className="flex items-center gap-2.5 p-3 rounded-xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-700 transition-colors"
             >
               <TerminalIcon
@@ -80,7 +68,7 @@ export function Skills() {
                 className="text-emerald-600 dark:text-emerald-500 shrink-0"
               />
               <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                {skill}
+                {skill.name}
               </span>
             </motion.div>
           ))}

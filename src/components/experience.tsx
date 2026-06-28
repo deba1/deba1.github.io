@@ -1,4 +1,4 @@
-import { BriefcaseIcon, CheckCircle2Icon } from "lucide-react";
+import { BriefcaseIcon, CheckCircle2Icon, GlobeIcon } from "lucide-react";
 import { profileData } from "@/data/profile-data";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -17,15 +17,14 @@ export function Experience() {
           Professional Experience
         </h2>
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Tab Navigation Controls */}
-        <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible gap-2 pb-2 md:pb-0">
+        <div className="flex flex-wrap md:flex-col gap-2 pb-2 md:pb-0">
           {profileData.experiences.map((exp, idx) => (
             <button
               key={exp.company}
               onClick={() => setActiveTab(idx)}
-              className={`whitespace-nowrap text-left px-4 py-3 rounded-xl text-sm font-mono tracking-tight border transition-all shrink-0 ${activeTab === idx ? "bg-emerald-600/10 dark:bg-emerald-500/10 border-emerald-600/30 dark:border-emerald-500/40 text-emerald-600 dark:text-emerald-400 font-bold" : "bg-transparent border-transparent text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-900 hover:text-slate-900 dark:hover:text-slate-200"}`}
+              className={`whitespace-nowrap text-left px-4 py-3 rounded-xl text-sm font-mono tracking-tight border transition-all ${activeTab === idx ? "bg-emerald-600/10 dark:bg-emerald-500/10 border-emerald-600/30 dark:border-emerald-500/40 text-emerald-600 dark:text-emerald-400 font-bold" : "bg-transparent border-transparent text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-900 hover:text-slate-900 dark:hover:text-slate-200"}`}
             >
               {exp.company}
             </button>
@@ -41,12 +40,25 @@ export function Experience() {
             className="space-y-6"
           >
             <div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
-                {profileData.experiences[activeTab].role}{" "}
-                <span className="text-emerald-600 dark:text-emerald-400">
-                  @ {profileData.experiences[activeTab].company}
-                </span>
-              </h3>
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                  {profileData.experiences[activeTab].role}{" "}
+                  <span className="text-emerald-600 dark:text-emerald-400">
+                    @ {profileData.experiences[activeTab].company}
+                  </span>
+                </h3>
+                {profileData.experiences[activeTab].website && (
+                  <a
+                    href={profileData.experiences[activeTab].website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 hover:opacity-80"
+                  >
+                    <GlobeIcon size={14} />
+                    Company Website
+                  </a>
+                )}
+              </div>
               <div className="flex justify-between items-center text-xs font-mono text-slate-400 dark:text-slate-500 mt-1">
                 <span>{profileData.experiences[activeTab].duration}</span>
                 <span>{profileData.experiences[activeTab].location}</span>

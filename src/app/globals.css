@@ -1,29 +1,64 @@
+/* @import "tailwindcss/preflight" layer(utilities); */
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
+@config "../../tailwind.config.ts";
+
 @tailwind utilities;
 
 html {
   scroll-behavior: smooth;
 }
 
-/* 🌓 SYSTEM PREFERENCE BY DEFAULT */
 body {
-  @apply bg-slate-50 text-slate-900 transition-colors duration-300;
+  --color-background: 248 250 252;
+  --color-foreground: 15 23 42;
+  --color-border: 226 232 240;
+  --color-muted: 241 245 249;
+  --color-muted-foreground: 71 85 105;
+  --color-card: 255 255 255;
+  --color-card-foreground: 15 23 42;
+  --color-primary: 4 120 87;
+  --color-primary-foreground: 255 255 255;
+  --color-secondary: 239 246 255;
+  --color-secondary-foreground: 15 23 42;
+  --color-accent: 236 253 245;
+  --color-accent-foreground: 15 23 42;
+
+  @apply bg-(--color-background) text-(--color-foreground) transition-colors duration-300;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    @apply bg-[#0b0f19] text-slate-100;
-  }
-}
-
-/* 🛠️ MANUAL OVERRIDES (When class is explicitly added via the toggle) */
 body:has(.dark) {
-  @apply bg-[#0b0f19] text-slate-100;
+  --color-background: 11 15 25;
+  --color-foreground: 241 245 249;
+  --color-border: 30 41 59;
+  --color-muted: 15 23 42;
+  --color-muted-foreground: 148 163 184;
+  --color-card: 15 23 42;
+  --color-card-foreground: 241 245 249;
+  --color-primary: 52 211 153;
+  --color-primary-foreground: 2 6 23;
+  --color-secondary: 15 23 42;
+  --color-secondary-foreground: 241 245 249;
+  --color-accent: 15 23 42;
+  --color-accent-foreground: 241 245 249;
+
+  @apply bg-(--color-background) text-(--color-foreground);
 }
 
 body:has(.light) {
-  @apply bg-slate-50 text-slate-900;
+  --color-background: 248 250 252;
+  --color-foreground: 15 23 42;
+  --color-border: 226 232 240;
+  --color-muted: 241 245 249;
+  --color-muted-foreground: 71 85 105;
+  --color-card: 255 255 255;
+  --color-card-foreground: 15 23 42;
+  --color-primary: 16 185 129;
+  --color-primary-foreground: 255 255 255;
+  --color-secondary: 239 246 255;
+  --color-secondary-foreground: 15 23 42;
+  --color-accent: 236 253 245;
+  --color-accent-foreground: 15 23 42;
+
+  @apply bg-(--color-background) text-(--color-foreground);
 }

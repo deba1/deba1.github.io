@@ -2,7 +2,12 @@ import Image from "next/image";
 import heroImage from "@/assets/hero.png";
 import { motion } from "framer-motion";
 import { profileData } from "@/data/profile-data";
-import { ArrowUpRightIcon, GitForkIcon, MailIcon } from "lucide-react";
+import {
+  ArrowUpRightIcon,
+  GitForkIcon,
+  MailIcon,
+  MapPinIcon,
+} from "lucide-react";
 
 export function Hero() {
   return (
@@ -15,9 +20,9 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-600/10 dark:bg-emerald-500/10 border border-emerald-600/20 dark:border-emerald-500/20 text-emerald-700 dark:text-emerald-400 text-xs font-mono"
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/20 text-primary text-xs font-mono"
         >
-          <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
           Available for technical collaboration
         </motion.div>
 
@@ -25,10 +30,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100"
+          className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground"
         >
           Hi, I'm{" "}
-          <span className="bg-clip-text text-transparent bg-linear-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-500">
+          <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-cyan-500">
             {profileData.name}
           </span>
         </motion.h1>
@@ -37,7 +42,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-mono"
+          className="text-lg md:text-xl text-muted-foreground font-mono"
         >
           {profileData.title}
         </motion.p>
@@ -46,10 +51,22 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed"
+          className="text-base text-muted-foreground max-w-2xl leading-relaxed"
         >
           {profileData.summary}
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+          className="flex flex-wrap gap-3"
+        >
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-card text-xs text-muted-foreground">
+            <MapPinIcon size={14} className="text-primary" />
+            {profileData.location}
+          </span>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -59,7 +76,7 @@ export function Hero() {
         >
           <a
             href={`mailto:${profileData.email}`}
-            className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-950 font-semibold px-5 py-2.5 rounded-lg transition-all shadow-md dark:shadow-none"
+            className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-5 py-2.5 rounded-lg transition-all shadow-md dark:shadow-none"
           >
             <MailIcon size={18} /> Contact Me
           </a>
@@ -67,7 +84,7 @@ export function Hero() {
             href={profileData.github}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-800 px-5 py-2.5 rounded-lg transition-all text-slate-700 dark:text-slate-300 shadow-sm dark:shadow-none"
+            className="flex items-center gap-2 bg-card hover:bg-muted border border-border px-5 py-2.5 rounded-lg transition-all text-foreground shadow-sm dark:shadow-none"
           >
             <GitForkIcon size={18} /> GitHub Profile{" "}
             <ArrowUpRightIcon size={16} />

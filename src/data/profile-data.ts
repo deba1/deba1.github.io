@@ -2,46 +2,191 @@ import { ProfileData } from "@/types";
 
 export const profileData: ProfileData = {
   name: "Debashish Sarker",
-  title: "Senior Developer | ASP.NET Core | Full Stack Developer",
+  title: "Senior Software Engineer | ASP.NET Core | Full Stack Developer",
   location: "Dhaka, Bangladesh",
-  summary: "As a passionate and versatile Senior Developer, I specialize in crafting robust, scalable solutions across both backend and frontend technologies. I thrive on solving complex challenges and contributing to the success of projects and teams alike from brainstorming to deployment and maintenance.",
+  phone: "+8801763923789",
+  willingToRelocate: "Anywhere",
+  summary: "Senior Software Engineer with extensive experience in building scalable, high-performance applications across eCommerce, hyperlocal platforms, and blockchain ecosystems. Skilled in microservice architecture, cloud infrastructure, CI/CD automation, and modern frontend frameworks. Adept at designing secure and efficient systems, optimizing performance, and integrating complex third-party APIs. Known for driving architectural improvements, mentoring teams, and delivering robust, maintainable solutions that support long-term product growth.",
   skills: [
-    "TypeScript", "ASP.NET Core", "NestJS", "NodeJS", "NextJS",
-    "ReactJS", "Angular", "MongoDB", "MSSQL", "MySQL",
-    "Postgres", "Firebase", "Git", "DevOps", "Shell Scripting"
+    { name: "Jira", type: "DevOps" },
+    { name: "Git", type: "DevOps" },
+    { name: "Angular", type: "Frontend" },
+    { name: "Optimizely CMS", type: "CMS" },
+    { name: "nopCommerce", type: "CMS" },
+    { name: "MS SQL", type: "DB" },
+    { name: "MySQL", type: "DB" },
+    { name: "PostgreSQL", type: "DB" },
+    { name: "MongoDB", type: "DB" },
+    { name: "Redis", type: "DB" },
+    { name: "TypeScript", type: "Frontend" },
+    { name: "React", type: "Frontend" },
+    { name: "Next.js", type: "Frontend" },
+    { name: "Nuxt.js", type: "Frontend" },
+    { name: "HTML", type: "Frontend" },
+    { name: "CSS", type: "Frontend" },
+    { name: "Bootstrap", type: "Frontend" },
+    { name: "ASP.NET Core", type: "Backend" },
+    { name: "ASP.NET", type: "Backend" },
+    { name: "C#", type: "Backend" },
+    { name: "Node.js", type: "Backend" },
+    { name: "Express.js", type: "Backend" },
+    { name: "REST API", type: "Backend" },
+    { name: "API Integration", type: "Backend" },
+    { name: "Microservices", type: "Backend" },
+    { name: "Docker", type: "DevOps" },
+    { name: "CI/CD", type: "DevOps" },
+    { name: "Infrastructure Setup", type: "DevOps" },
+    { name: "Firebase", type: "DevOps" },
+    { name: "DevOps", type: "DevOps" },
+    { name: "Shell Scripting", type: "DevOps" },
+    { name: "Solidity", type: "Blockchain" },
+    { name: "Web3.js", type: "Blockchain" },
+    { name: "Ethers.js", type: "Blockchain" },
+    { name: "ERC-20", type: "Blockchain" },
+    { name: "ERC-721", type: "Blockchain" },
   ],
   experiences: [
     {
       company: "Optimizely",
+      website: "https://www.optimizely.com/",
       role: "Senior Developer",
       duration: "February 2026 - Present",
       location: "Dhaka, Bangladesh",
       highlights: [
-        "Architecting and delivering highly scalable enterprise web applications.",
-        "Leveraging cross-functional backend and frontend patterns to push product boundaries."
+        "Building dynamic websites with Optimizely CMS and React.",
+        "Integrating Optimizely-driven experiences with existing backend APIs.",
+        "Initialized core infrastructure to support scalable content and delivery workflows.",
       ],
       projects: []
     },
     {
-      company: "Brain Station 23",
-      role: "Senior Software Engineer",
-      duration: "July 2024 - January 2026",
+      company: "Brain Station 23 PLC",
+      website: "https://brainstation-23.com/",
+      role: "Senior Software Engineer I",
+      duration: "January 2022 - January 2026",
       location: "Dhaka, Bangladesh",
       highlights: [
-        "Led core feature developments using advanced .NET and modern JavaScript ecosystems.",
-        "Promoted sequentially from Associate to Software Engineer and Senior Software Engineer due to high technical delivery."
+        "Developed robust eCommerce platforms using nopCommerce, delivering scalable and high-performance solutions for enterprise clients.",
+        "Designed and developed a scalable online business directory platform, enabling users to easily discover and connect with local businesses.",
+        "Mentored junior developers through code reviews, pair programming, and technical guidance.",
+        "Led end-to-end delivery for multiple projects, coordinating across engineering, QA, DevOps, and product teams.",
+        "Collaborated with cross-functional teams to ensure smooth delivery of new features, scalability improvements, and long-term maintainability.",
+        "Designed and built headless applications leveraging microservice architecture, improving modularity, performance, and deployment flexibility.",
+        "Engineered modern frontend interfaces using Next.js and Angular, enabling seamless integration with headless backend systems.",
+        "Designed and developed a scalable hyperlocal eCommerce platform enabling customers to order products from nearby stores with real-time inventory and delivery availability.",
+        "Integrated map services and geolocation APIs to automatically detect nearby shops based on the user's location, enabling real-time hyperlocal discovery and improved ordering experience.",
+        "Integrated Firebase Cloud Messaging (FCM) to deliver real-time push notifications for order updates, promotions, and system alerts, improving user engagement and response times.",
+        "Implemented Redis caching to optimize performance for frequently accessed data such as product catalogs, shop availability, and location-based results, reducing API latency significantly.",
+        "Collaborated cross-functionally with distributed teams to deliver optimized, maintainable, and high-quality software solutions.",
+        "Led the migration of legacy WooCommerce systems to nopCommerce, improving system stability, performance, and extensibility.",
+        "Followed scrum methodology to facilitate project delivery.",
+        "Contributed to the design and evolution of application architecture, ensuring scalability, performance, and maintainability.",
+        "Conducted technical audits in cloud infrastructure to optimize security, cost, performance, compliance, and overall operational effectiveness.",
+        "Implemented and managed CI/CD pipelines to reduce build time for multiple environments and improve deployment efficiency.",
+        "Benchmarked applications to identify and fix issues resulting in increased system efficiency.",
+        "Followed SOLID principles and best practices during development to increase application code quality and maintainability."
       ],
       projects: []
     },
     {
-      company: "Deepchain Labs",
-      role: "Blockchain Developer",
-      duration: "July 2020 - December 2021",
+      company: "DeepchainLabs",
+      website: "https://deepchainlabs.com/",
+      role: "Junior Software Engineer",
+      duration: "October 2020 - January 2022",
       location: "Dhaka, Bangladesh",
       highlights: [
-        "Engineered decentralized ledger mechanisms and specialized payment ecosystem structures."
+        "Developed and audited smart contracts using Solidity for multiple blockchain-based products, ensuring security, gas efficiency, and maintainability.",
+        "Built decentralized and hybrid web applications using Next.js, Nuxt.js, and Express.js to enable seamless blockchain interactions.",
+        "Integrated smart contracts with frontend interfaces and backend APIs using Web3.js, Ethers.js, and related blockchain libraries.",
+        "Worked extensively with blockchain token standards including ERC-20 and ERC-721, contributing to token economies, NFT marketplaces, and blockchain-based authentication flows."
       ],
       projects: []
+    },
+    {
+      company: "No Borders IT",
+      website: "https://nobordersit.com/",
+      role: "Software Developer Intern",
+      duration: "January 2020 - May 2020",
+      location: "Dhaka, Bangladesh",
+      highlights: [
+        "Assisted in developing ticketing features using IATA plain ticketing standards, ensuring accurate itinerary generation and booking flows.",
+        "Integrated third-party travel and ticketing APIs to fetch real-time flight schedules, fares, availability, and booking confirmations.",
+        "Designed and implemented user-friendly frontend interfaces to improve customer experience in searching and booking tickets.",
+        "Supported the development of internal tools used by agents for managing bookings, PNR information, and customer travel data."
+      ],
+      projects: []
+    }
+  ],
+  education: [
+    {
+      degree: "CSE (BSc in Computer Science and Engineering)",
+      institution: "American International University-Bangladesh",
+      location: "Dhaka",
+      duration: "2017 - 2020",
+      achievements: [
+        "Dean's List Award recipient.",
+        "Earned academic scholarship.",
+        "Graduated with strong academic performance.",
+        "ACC (AIUB Computer Club): co-organized CS Fest where school and college students participated in multiple events.",
+        "Participated in Jarvis (ICT quiz inside ACC) and became runner-up.",
+      ],
+    },
+    {
+      degree: "Higher Secondary School Certificate",
+      institution: "Nazipur Govt. College",
+      location: "Naogaon",
+      duration: "2014 - 2015",
+    },
+    {
+      degree: "Secondary School Certificate",
+      institution: "Nazipur High School",
+      location: "Naogaon",
+      duration: "2008 - 2013",
+    },
+    {
+      degree: "Primary Education",
+      institution: "Oxford Pre-Cadet and Kinder-garten School",
+      location: "Naogaon",
+      duration: "2001 - 2007",
+    }
+  ],
+  languages: [
+    {
+      name: "Bengali",
+      proficiency: "Expert",
+    },
+    {
+      name: "English",
+      proficiency: "Intermediate",
+    }
+  ],
+  awards: [
+    {
+      title: "Dean's List Award",
+      date: "2018 - 2020",
+      issuer: "American International University-Bangladesh (AIUB)",
+      description: "Awarded 5 times in recognition of outstanding academic excellence.",
+    },
+    {
+      title: "AIUB Physics Quiz Contest",
+      date: "2017",
+      issuer: "Department of Physics, AIUB",
+      description: "Achieved 4th place in the final round.",
+      link: "https://www.aiub.edu/department-of-physics-of-aiub-has-organized-physics-quiz-contest-on-the-special-occasion-of-the-month-of-victory-of-bangladesh",
+    },
+    {
+      title: "Srijonshil Medha Onneshon Protijogita",
+      date: "2014",
+      issuer: "Ministry of Education, Government of Bangladesh",
+      description: "Participated in Math and Computer Science domain of group C. Secured 1st place at thana level and 2nd runner-up at district level.",
+    },
+  ],
+  certifications: [
+    {
+      name: "Certified nopCommerce developer",
+      issuer: "nopCommerce",
+      duration: "January 2025 - Present",
+      link: "https://www.nopcommerce.com/en/debashish-sarker",
     }
   ],
   publications: [
@@ -53,12 +198,12 @@ export const profileData: ProfileData = {
     {
       title: "Decentralized Payment Aggregator: Hyperledger Fabric",
       description: "Research exploring permissioned enterprise blockchain ledger systems configured as multi-tenant transaction aggregators.",
-      link: "https://dl.acm.org/doi/pdf/10.1145/3542954.3543006"
+      link: "https://www.researchgate.net/profile/Mdal-Amin/publication/365108137_Decentralized_Payment_Aggregator_Hyperledger_Fabric/links/6520539e3ab6cb4ec6c0aada/Decentralized-Payment-Aggregator-Hyperledger-Fabric.pdf"
     },
     {
       title: "A Comprehensive Review and Analysis on Decentralized Payment Gateways",
       description: "In-depth dynamic architectural assessment mapping security protocols against transaction friction in public and private chains.",
-      link: "https://www.researchgate.net/profile/Mdal-Amin/publication/365108137_Decentralized_Payment_Aggregator_Hyperledger_Fabric/links/6520539e3ab6cb4ec6c0aada/Decentralized-Payment-Aggregator-Hyperledger-Fabric.pdf"
+      link: "https://dl.acm.org/doi/abs/10.1145/3542954.3543006"
     }
   ],
   github: "https://github.com/deba1",
