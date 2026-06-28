@@ -4,6 +4,7 @@ export interface Experience {
   duration: string;
   location: string;
   highlights: string[];
+  projects: Project[];
 }
 
 export interface Publication {
@@ -22,4 +23,11 @@ export interface ProfileData {
   publications: Publication[];
   github: string;
   email: string;
+}
+
+export interface Project {
+  name: string;
+  description: string;
+  contribution: string;
+  techStack: string[];
 }

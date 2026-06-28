@@ -6,8 +6,8 @@ export const profileData: ProfileData = {
   location: "Dhaka, Bangladesh",
   summary: "As a passionate and versatile Senior Developer, I specialize in crafting robust, scalable solutions across both backend and frontend technologies. I thrive on solving complex challenges and contributing to the success of projects and teams alike from brainstorming to deployment and maintenance.",
   skills: [
-    "TypeScript", "ASP.NET Core", "NestJS", "NodeJS", "NextJS", 
-    "ReactJS", "Angular", "MongoDB", "MSSQL", "MySQL", 
+    "TypeScript", "ASP.NET Core", "NestJS", "NodeJS", "NextJS",
+    "ReactJS", "Angular", "MongoDB", "MSSQL", "MySQL",
     "Postgres", "Firebase", "Git", "DevOps", "Shell Scripting"
   ],
   experiences: [
@@ -19,7 +19,8 @@ export const profileData: ProfileData = {
       highlights: [
         "Architecting and delivering highly scalable enterprise web applications.",
         "Leveraging cross-functional backend and frontend patterns to push product boundaries."
-      ]
+      ],
+      projects: []
     },
     {
       company: "Brain Station 23",
@@ -29,7 +30,8 @@ export const profileData: ProfileData = {
       highlights: [
         "Led core feature developments using advanced .NET and modern JavaScript ecosystems.",
         "Promoted sequentially from Associate to Software Engineer and Senior Software Engineer due to high technical delivery."
-      ]
+      ],
+      projects: []
     },
     {
       company: "Deepchain Labs",
@@ -38,7 +40,8 @@ export const profileData: ProfileData = {
       location: "Dhaka, Bangladesh",
       highlights: [
         "Engineered decentralized ledger mechanisms and specialized payment ecosystem structures."
-      ]
+      ],
+      projects: []
     }
   ],
   publications: [
