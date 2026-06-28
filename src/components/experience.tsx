@@ -19,12 +19,12 @@ export function Experience() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Tab Navigation Controls */}
-        <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible gap-2 pb-2 md:pb-0">
+        <div className="flex flex-wrap md:flex-col gap-2 pb-2 md:pb-0">
           {profileData.experiences.map((exp, idx) => (
             <button
               key={exp.company}
               onClick={() => setActiveTab(idx)}
-              className={`whitespace-nowrap text-left px-4 py-3 rounded-xl text-sm font-mono tracking-tight border transition-all shrink-0 ${activeTab === idx ? "bg-emerald-600/10 dark:bg-emerald-500/10 border-emerald-600/30 dark:border-emerald-500/40 text-emerald-600 dark:text-emerald-400 font-bold" : "bg-transparent border-transparent text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-900 hover:text-slate-900 dark:hover:text-slate-200"}`}
+              className={`whitespace-nowrap text-left px-4 py-3 rounded-xl text-sm font-mono tracking-tight border transition-all ${activeTab === idx ? "bg-emerald-600/10 dark:bg-emerald-500/10 border-emerald-600/30 dark:border-emerald-500/40 text-emerald-600 dark:text-emerald-400 font-bold" : "bg-transparent border-transparent text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-900 hover:text-slate-900 dark:hover:text-slate-200"}`}
             >
               {exp.company}
             </button>

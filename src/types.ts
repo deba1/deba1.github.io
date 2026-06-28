@@ -36,6 +36,20 @@ export interface Certification {
   link?: string;
 }
 
+export type SkillType =
+  | "Frontend"
+  | "Backend"
+  | "DB"
+  | "CMS"
+  | "DevOps"
+  | "Blockchain";
+
+export interface Skill {
+  name: string;
+  type: SkillType;
+  icon?: string;
+}
+
 export interface Publication {
   title: string;
   description: string;
@@ -49,7 +63,7 @@ export interface ProfileData {
   phone?: string;
   willingToRelocate?: string;
   summary: string;
-  skills: string[];
+  skills: Skill[];
   experiences: Experience[];
   education: Education[];
   languages: Language[];

@@ -2,15 +2,9 @@ import { profileData } from "@/data/profile-data";
 import { motion, AnimatePresence } from "framer-motion";
 import { LayersIcon, TerminalIcon } from "lucide-react";
 import { useMemo, useState } from "react";
+import type { SkillType } from "@/types";
 
-type SkillFilter =
-  | "All"
-  | "Frontend"
-  | "Backend"
-  | "DB"
-  | "CMS"
-  | "DevOps"
-  | "Blockchain";
+type SkillFilter = SkillType | "All";
 
 const SKILL_TYPES = [
   "All",
@@ -22,45 +16,12 @@ const SKILL_TYPES = [
   "Blockchain",
 ] as const satisfies SkillFilter[];
 
-const skillGroups: Record<Exclude<SkillFilter, "All">, string[]> = {
-  Frontend: [
-    "React",
-    "Next.js",
-    "Angular",
-    "TypeScript",
-    "HTML",
-    "CSS",
-    "Bootstrap",
-  ],
-  Backend: [
-    "ASP.NET Core",
-    "ASP.NET",
-    "Node.js",
-    "Express.js",
-    "REST API",
-    "API Integration",
-    "Microservices",
-  ],
-  DB: ["MS SQL", "MongoDB", "Redis", "MySQL", "PostgreSQL"],
-  CMS: ["Optimizely CMS", "nopCommerce", "WooCommerce"],
-  DevOps: [
-    "Docker",
-    "CI/CD",
-    "DevOps",
-    "Infrastructure Setup",
-    "Firebase",
-    "Git",
-  ],
-  Blockchain: ["Solidity", "Web3.js", "Ethers.js", "ERC-20", "ERC-721"],
-};
-
 export function Skills() {
   const [skillFilter, setSkillFilter] = useState<SkillFilter>("All");
 
   const filteredSkills = useMemo(() => {
     if (skillFilter === "All") return profileData.skills;
-    const selectedGroup = new Set(skillGroups[skillFilter]);
-    return profileData.skills.filter((skill) => selectedGroup.has(skill));
+    return profileData.skills.filter((skill) => skill.type === skillFilter);
   }, [skillFilter]);
 
   return (
@@ -99,7 +60,7 @@ export function Skills() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              key={skill}
+              key={skill.name}
               className="flex items-center gap-2.5 p-3 rounded-xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-700 transition-colors"
             >
               <TerminalIcon
@@ -107,7 +68,7 @@ export function Skills() {
                 className="text-emerald-600 dark:text-emerald-500 shrink-0"
               />
               <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                {skill}
+                {skill.name}
               </span>
             </motion.div>
           ))}
