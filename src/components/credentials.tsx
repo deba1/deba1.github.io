@@ -1,11 +1,6 @@
 import { profileData } from "@/data/profile-data";
 import { motion } from "framer-motion";
-import {
-  AwardIcon,
-  BadgeCheckIcon,
-  GraduationCapIcon,
-  LanguagesIcon,
-} from "lucide-react";
+import { AwardIcon, BadgeCheckIcon, GraduationCapIcon } from "lucide-react";
 
 export function Credentials() {
   return (
@@ -41,30 +36,19 @@ export function Credentials() {
                   <span>{education.location}</span>
                   <span>{education.duration}</span>
                 </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div
-          whileHover={{ y: -4 }}
-          className="p-6 rounded-2xl bg-card text-card-foreground border border-border shadow-sm dark:shadow-none space-y-4"
-        >
-          <div className="flex items-center gap-2.5">
-            <LanguagesIcon className="text-primary" size={18} />
-            <h3 className="text-lg font-semibold">Languages</h3>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {profileData.languages.map((language) => (
-              <div
-                key={language.name}
-                className="rounded-xl border border-border/70 bg-muted/30 p-4"
-              >
-                <p className="font-semibold text-foreground">{language.name}</p>
-                <p className="text-sm text-muted-foreground">
-                  {language.proficiency}
-                </p>
+                {education.achievements &&
+                  education.achievements.length > 0 && (
+                    <ul className="pt-2 space-y-1.5">
+                      {education.achievements.map((achievement) => (
+                        <li
+                          key={`${education.institution}-${achievement}`}
+                          className="text-sm text-muted-foreground leading-relaxed"
+                        >
+                          • {achievement}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
               </div>
             ))}
           </div>
@@ -91,9 +75,24 @@ export function Credentials() {
                     {award.date}
                   </span>
                 </div>
+                {award.issuer && (
+                  <p className="text-sm text-muted-foreground">
+                    {award.issuer}
+                  </p>
+                )}
                 <p className="text-sm text-muted-foreground">
                   {award.description}
                 </p>
+                {award.link && (
+                  <a
+                    href={award.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center text-xs font-mono font-bold text-primary hover:opacity-80"
+                  >
+                    View details
+                  </a>
+                )}
               </div>
             ))}
           </div>

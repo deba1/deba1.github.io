@@ -11,14 +11,25 @@ export const profileData: ProfileData = {
     "Jira",
     "Git",
     "Angular",
+    "Optimizely CMS",
+    "nopCommerce",
     "MS SQL",
+    "MySQL",
+    "PostgreSQL",
     "TypeScript",
     "C#",
     "Docker",
+    "CI/CD",
+    "Microservices",
+    "API Integration",
+    "Infrastructure Setup",
     "Bootstrap",
     "MongoDB",
+    "Redis",
     "React",
     "ASP.NET Core",
+    "Express.js",
+    "Nuxt.js",
     "HTML",
     "CSS",
     "ASP.NET",
@@ -27,19 +38,30 @@ export const profileData: ProfileData = {
     "REST API",
     "Firebase",
     "DevOps",
+    "Solidity",
+    "Web3.js",
+    "Ethers.js",
+    "ERC-20",
+    "ERC-721",
     "Shell Scripting",
   ],
   experiences: [
     {
       company: "Optimizely",
+      website: "https://www.optimizely.com/",
       role: "Senior Developer",
       duration: "February 2026 - Present",
       location: "Dhaka, Bangladesh",
-      highlights: [],
+      highlights: [
+        "Building dynamic websites with Optimizely CMS and React.",
+        "Integrating Optimizely-driven experiences with existing backend APIs.",
+        "Initialized core infrastructure to support scalable content and delivery workflows.",
+      ],
       projects: []
     },
     {
       company: "Brain Station 23 PLC",
+      website: "https://brainstation-23.com/",
       role: "Senior Software Engineer I",
       duration: "January 2022 - January 2026",
       location: "Dhaka, Bangladesh",
@@ -67,7 +89,8 @@ export const profileData: ProfileData = {
       projects: []
     },
     {
-      company: "DeepchainLab.",
+      company: "DeepchainLabs",
+      website: "https://deepchainlabs.com/",
       role: "Junior Software Engineer",
       duration: "October 2020 - January 2022",
       location: "Dhaka, Bangladesh",
@@ -81,6 +104,7 @@ export const profileData: ProfileData = {
     },
     {
       company: "No Borders IT",
+      website: "https://nobordersit.com/",
       role: "Software Developer Intern",
       duration: "January 2020 - May 2020",
       location: "Dhaka, Bangladesh",
@@ -99,6 +123,31 @@ export const profileData: ProfileData = {
       institution: "American International University-Bangladesh",
       location: "Dhaka",
       duration: "2017 - 2020",
+      achievements: [
+        "Dean's List Award recipient.",
+        "Earned academic scholarship.",
+        "Graduated with strong academic performance.",
+        "ACC (AIUB Computer Club): co-organized CS Fest where school and college students participated in multiple events.",
+        "Participated in Jarvis (ICT quiz inside ACC) and became runner-up.",
+      ],
+    },
+    {
+      degree: "Higher Secondary School Certificate",
+      institution: "Nazipur Govt. College",
+      location: "Naogaon",
+      duration: "2014 - 2015",
+    },
+    {
+      degree: "Secondary School Certificate",
+      institution: "Nazipur High School",
+      location: "Naogaon",
+      duration: "2008 - 2013",
+    },
+    {
+      degree: "Primary Education",
+      institution: "Oxford Pre-Cadet and Kinder-garten School",
+      location: "Naogaon",
+      duration: "2001 - 2007",
     }
   ],
   languages: [
@@ -114,9 +163,23 @@ export const profileData: ProfileData = {
   awards: [
     {
       title: "Dean's List Award",
-      date: "December 2018",
+      date: "2018 - 2020",
+      issuer: "American International University-Bangladesh (AIUB)",
       description: "Awarded 5 times in recognition of outstanding academic excellence.",
-    }
+    },
+    {
+      title: "AIUB Physics Quiz Contest",
+      date: "2017",
+      issuer: "Department of Physics, AIUB",
+      description: "Achieved 4th place in the final round.",
+      link: "https://www.aiub.edu/department-of-physics-of-aiub-has-organized-physics-quiz-contest-on-the-special-occasion-of-the-month-of-victory-of-bangladesh",
+    },
+    {
+      title: "Srijonshil Medha Onneshon Protijogita",
+      date: "2014",
+      issuer: "Ministry of Education, Government of Bangladesh",
+      description: "Participated in Math and Computer Science domain of group C. Secured 1st place at thana level and 2nd runner-up at district level.",
+    },
   ],
   certifications: [
     {

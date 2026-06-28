@@ -1,5 +1,6 @@
 export interface Experience {
   company: string;
+  website?: string;
   role: string;
   duration: string;
   location: string;
@@ -12,6 +13,7 @@ export interface Education {
   institution: string;
   location: string;
   duration: string;
+  achievements?: string[];
 }
 
 export interface Language {
@@ -23,6 +25,8 @@ export interface Award {
   title: string;
   date: string;
   description: string;
+  issuer?: string;
+  link?: string;
 }
 
 export interface Certification {

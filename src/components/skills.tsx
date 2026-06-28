@@ -3,38 +3,65 @@ import { motion, AnimatePresence } from "framer-motion";
 import { LayersIcon, TerminalIcon } from "lucide-react";
 import { useMemo, useState } from "react";
 
-type SkillFilter = "All" | "Backend" | "Frontend";
+type SkillFilter =
+  | "All"
+  | "Frontend"
+  | "Backend"
+  | "DB"
+  | "CMS"
+  | "DevOps"
+  | "Blockchain";
 
 const SKILL_TYPES = [
   "All",
-  "Backend",
   "Frontend",
+  "Backend",
+  "DB",
+  "CMS",
+  "DevOps",
+  "Blockchain",
 ] as const satisfies SkillFilter[];
 
-const backendSkills = [
-  "ASP.NET Core",
-  "NestJS",
-  "NodeJS",
-  "MSSQL",
-  "MySQL",
-  "Postgres",
-  "MongoDB",
-];
-
-const frontendSkills = ["TypeScript", "NextJS", "ReactJS", "Angular"];
+const skillGroups: Record<Exclude<SkillFilter, "All">, string[]> = {
+  Frontend: [
+    "React",
+    "Next.js",
+    "Angular",
+    "TypeScript",
+    "HTML",
+    "CSS",
+    "Bootstrap",
+  ],
+  Backend: [
+    "ASP.NET Core",
+    "ASP.NET",
+    "Node.js",
+    "Express.js",
+    "REST API",
+    "API Integration",
+    "Microservices",
+  ],
+  DB: ["MS SQL", "MongoDB", "Redis", "MySQL", "PostgreSQL"],
+  CMS: ["Optimizely CMS", "nopCommerce", "WooCommerce"],
+  DevOps: [
+    "Docker",
+    "CI/CD",
+    "DevOps",
+    "Infrastructure Setup",
+    "Firebase",
+    "Git",
+  ],
+  Blockchain: ["Solidity", "Web3.js", "Ethers.js", "ERC-20", "ERC-721"],
+};
 
 export function Skills() {
   const [skillFilter, setSkillFilter] = useState<SkillFilter>("All");
 
-  const filteredSkills = useMemo(
-    () =>
-      profileData.skills.filter((skill) => {
-        if (skillFilter === "Backend") return backendSkills.includes(skill);
-        if (skillFilter === "Frontend") return frontendSkills.includes(skill);
-        return true;
-      }),
-    [skillFilter],
-  );
+  const filteredSkills = useMemo(() => {
+    if (skillFilter === "All") return profileData.skills;
+    const selectedGroup = new Set(skillGroups[skillFilter]);
+    return profileData.skills.filter((skill) => selectedGroup.has(skill));
+  }, [skillFilter]);
 
   return (
     <section id="skills" className="space-y-8 scroll-mt-20">
